@@ -1,5 +1,5 @@
 #!/bin/bash
-logfile=/Users/kandyala.intern/Desktop/access.log
+logfile=/home/flask/final/access.log
 write_file=record.txt
 
 get_last_status_code(){
