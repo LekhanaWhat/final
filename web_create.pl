@@ -17,7 +17,7 @@ print "<body>\n";
 print "<div class=\"header\">\n";
 print "<h1>NGINX log parser 📜</h1>\n";
 @datearray=();
-$LOGFILE = '/Users/kandyala.intern/Desktop/access.log';
+$LOGFILE = '/home/flask/final/access.log';
 open(LOGFILE) or die("Could not open log file.");
 foreach $line (<LOGFILE>) {
     
@@ -102,7 +102,7 @@ print "</div>";
 #print "<button class=\"btn btn-primary\">Select timestamp<a href=timestamp></button>\n";
 
 
-my $bash_script = '/Users/kandyala.intern/Desktop/parser/next.sh';
+my $bash_script = '/home/flask/final/next.sh';
 open(my $pipe,'-|', $bash_script) or die $!;
 while (my $line = <$pipe>){
     print "<p>$line</p>\n";
