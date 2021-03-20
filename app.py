@@ -51,7 +51,7 @@ host_names_list = []
 
 
 def get_host_names_list():
-    with open("/Users/kandyala.intern/Desktop/access.log", "r") as file:
+    with open("/home/flask/final/access.log", "r") as file:
         data = file.readlines()
         for line in data:
             host = line.strip().split(' ')[-1]
