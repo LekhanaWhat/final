@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Parsed Nginx Data</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header">
+  <h1>NGINX log parser 📜</h1>
+  </br></br>
+
+  <form method="POST" action="/hostname" enctype="multipart/form-data">
+    <!-- <label class="sr-only" for="inlineFormInputName">Host Name</label>
+    <input type="text" name="hostname" class="form-control" id="inlineFormInputName" placeholder="Enter HostName..." required>
+    <button type="submit" class="btn btn-outline-primary">Submit</button> -->
+    <input type="text" name="hostname" placeholder="Enter hostname" required>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+  {% if host_data|length >= 1 %}
+  <div class="cardn">
+    <div class="row">
+        <div class="col">
+            <div style="padding: 40px;">
+                {% for i in host_data %}
+                {{i}}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+  </div>
+  {% else %}
+    
+  {% endif %}
+
+
+</body>
+</html>

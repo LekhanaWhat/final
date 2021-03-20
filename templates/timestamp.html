@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Parsed Nginx Data</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="header">
+  <h1>NGINX log parser 📜</h1>
+  </br></br>
+  <form method="POST" action="/timestamp" enctype="multipart/form-data">
+    <label for="from">From:</label>
+    <input type="date" value="2021-10-03" name="from-date" id="from-date">
+    <input type="time" step="1" id="from-time" name="from-time" required>
+  
+    <label for="to">To:</label>
+    <input type="date" value="2021-11-03" d="to-date" name="to-date">
+  
+    <input type="time" step="1" id="to-time" name="to-time" required>
+  
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  
+  </form>
+</div>
+
+
+{% if record_date|length >= 1 %}
+<div class="cardn">
+  <div class="row">
+    <div class="col">
+    
+        <div style="padding: 40px;">
+          {% for i in record_date %}
+          {{i}}
+          {% endfor %}
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+{% else %}
+{% endif %}
+
+
+
+</body>
+</html>
