@@ -1,6 +1,6 @@
 #!/bin/bash
-logfile=/Users/kandyala.intern/Desktop/access.log
-logfile1=/Users/kandyala.intern/Desktop/access.log
+logfile=/home/flask/final/access.log
+logfile1=/home/flask/final/access.log
 write_file=record.txt
 
 
